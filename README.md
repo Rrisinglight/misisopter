@@ -1,10 +1,10 @@
-# Команда MISISopter
+# АЭРОТОН 2024 ТРЕК 8
 
 <div align="center">
   <a href="https://t.me/leshquin">
     <img width="400" height="400" src="https://png.pngtree.com/png-clipart/20220921/ourmid/pngtree-drone-flying-on-transparent-background-png-image_6209864.png">
   </a>
-    <h3>## Команда MISISopter</h3>
+    <h3><b> Команда MISISopter</b></h3>
   <br>
   <h2>Механизированный поворотный антенный блок для автоматического сопровождения</h2>
 </div>
