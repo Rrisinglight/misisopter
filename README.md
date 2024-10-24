@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://t.me/leshquin">
-    <img width="100" height="100" src="https://png.pngtree.com/png-clipart/20220921/ourmid/pngtree-drone-flying-on-transparent-background-png-image_6209864.png">
+    <img width="400" height="400" src="https://png.pngtree.com/png-clipart/20220921/ourmid/pngtree-drone-flying-on-transparent-background-png-image_6209864.png">
   </a>
   <br>
   <h2>Механизированный поворотный антенный блок для автоматического сопровождения</h2>
