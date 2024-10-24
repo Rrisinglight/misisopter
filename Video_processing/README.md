@@ -20,16 +20,15 @@
 
 ## Установка
 
+### Установка зависимостей
+```bash
+pip install -r requirements.txt
+```
+
 ### Требования
 - Python 3.x
 - OpenCV
-- NumPy
-- tqdm
-
-### Установка зависимостей
-```bash
-pip install opencv-python numpy tqdm
-```
+- FFMPEG с кодеком h264
 
 ## Использование
 
@@ -43,6 +42,6 @@ python ColorVideo.py --video путь_к_видео --output выход.avi
 ### ConturVideo.py
 Обнаружение контуров на видео.
 ```bash
-python ConturVideo.py
+python ConturVideo.py --video путь_к_видео --output выход.avi
 ```
-*Использует веб-камеру или `./video/testvideo_1.mp4` по умолчанию.*
+*Если `--video` не указано, используется веб-камера.*
