@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"laser\startup_stm32f103xb.o"
+"laser\main.o"
+"laser\gpio.o"
+"laser\usart.o"
+"laser\stm32f1xx_it.o"
+"laser\stm32f1xx_hal_msp.o"
+"laser\stm32f1xx_hal_gpio_ex.o"
+"laser\stm32f1xx_hal_tim.o"
+"laser\stm32f1xx_hal_tim_ex.o"
+"laser\stm32f1xx_hal_uart.o"
+"laser\stm32f1xx_hal.o"
+"laser\stm32f1xx_hal_rcc.o"
+"laser\stm32f1xx_hal_rcc_ex.o"
+"laser\stm32f1xx_hal_gpio.o"
+"laser\stm32f1xx_hal_dma.o"
+"laser\stm32f1xx_hal_cortex.o"
+"laser\stm32f1xx_hal_pwr.o"
+"laser\stm32f1xx_hal_flash.o"
+"laser\stm32f1xx_hal_flash_ex.o"
+"laser\stm32f1xx_hal_exti.o"
+"laser\system_stm32f1xx.o"
+--strict --scatter "Laser\Laser.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Laser.map" -o Laser\Laser.axf

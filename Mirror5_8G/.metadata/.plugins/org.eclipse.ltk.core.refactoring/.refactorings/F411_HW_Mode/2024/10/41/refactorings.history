@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;F411_HW_Mode/Core/Src/RX5808&apos; to &apos;RX5808.c&apos;" description="Rename resource &apos;RX5808&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/RX5808" name="RX5808.c" stamp="1728475331116" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;F411_HW_Mode/Core/Inc/RX5808&apos; to &apos;RX5808.h&apos;" description="Rename resource &apos;RX5808&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/RX5808" name="RX5808.h" stamp="1728475477404" updateReferences="true"/>
+</session>

@@ -1,0 +1,7 @@
+../Core/Src/RX5808.c:17:6:RX5808_Init	4	static
+../Core/Src/RX5808.c:33:7:prog_freg	32	static
+../Core/Src/RX5808.c:56:16:rssi_db	24	static
+../Core/Src/RX5808.c:66:15:CH_32_to_band	24	static
+../Core/Src/RX5808.c:77:15:CH_32_to_CH_8	24	static
+../Core/Src/RX5808.c:96:14:CH_32_to_frequency	24	static
+../Core/Src/RX5808.c:102:15:frequency_to_CH_32	24	static

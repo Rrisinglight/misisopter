@@ -1,0 +1,16 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:F411_HW_Mode Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F411_HW_SPI_UART Debug
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103_HW_SPI_UART\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103_HW_SPI_UART\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F411_HW_Mode\ Debug\ (1)/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F411_HW_Mode\ Debug\ (1)/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F411_HW_SPI_UART\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F411_HW_SPI_UART\ Debug/activeLaunchTarget=null\:---
+org.eclipse.launchbar.core.descriptorType.default\:F103_HW_SPI_UART\ Debug/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:F411_HW_Mode\ Debug\ (1)/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:F411_HW_Mode\ Debug/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:F411_HW_Mode\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:F411_HW_SPI_UART\ Debug/activeLaunchMode=debug

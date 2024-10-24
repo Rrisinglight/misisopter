@@ -1,0 +1,4 @@
+D:/STM Project/Mirror5_8G/F411_HW_SPI_UART/Core/Src/usart.c:32:6:MX_USART1_UART_Init	2
+D:/STM Project/Mirror5_8G/F411_HW_SPI_UART/Core/Src/usart.c:61:6:MX_USART2_UART_Init	2
+D:/STM Project/Mirror5_8G/F411_HW_SPI_UART/Core/Src/usart.c:89:6:HAL_UART_MspInit	3
+D:/STM Project/Mirror5_8G/F411_HW_SPI_UART/Core/Src/usart.c:149:6:HAL_UART_MspDeInit	3
