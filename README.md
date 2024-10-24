@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://t.me/leshquin">
-    <img width="400" height="400" src="https://png.pngtree.com/png-clipart/20220921/ourmid/pngtree-drone-flying-on-transparent-background-png-image_6209864.png">
+    <img width="400" height="200" src="https://png.pngtree.com/png-clipart/20220921/ourmid/pngtree-drone-flying-on-transparent-background-png-image_6209864.png">
   </a>
     <h3><b> Команда MISISopter</b></h3>
   <br>
