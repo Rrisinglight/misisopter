@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Stream Control</title>
+</head>
+<body>
+    <h1>Video Stream Control</h1>
+    
+    <!-- Видеоплеер, который будет отображать видеопоток -->
+    <img id="video" src="{{ url_for('video_feed') }}" width="1280" height="720">
+
+    <!-- Кнопка для воспроизведения/приостановки видеопотока -->
+    <button id="toggle" onclick="toggleVideo()">Start</button>
+
+    <script>
+        var video = document.getElementById('video');
+        var toggleButton = document.getElementById('toggle');
+        var playing = true;
+
+        // Функция для воспроизведения/приостановки видеопотока
+        function toggleVideo() {
+            if (playing) {
+                video.style.display = 'none';
+                toggleButton.innerText = 'Start';
+            } else {
+                video.style.display = 'block';
+                toggleButton.innerText = 'Pause';
+            }
+            playing = !playing;
+        }
+    </script>
+</body>
+</html>
