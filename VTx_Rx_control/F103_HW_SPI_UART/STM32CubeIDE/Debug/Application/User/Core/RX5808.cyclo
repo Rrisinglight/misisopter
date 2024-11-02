@@ -1,8 +1,0 @@
-D:/STM Project/Mirror5_8G/F103_HW_SPI_UART/Core/Src/RX5808.c:18:6:OutSPI1Pin	1
-D:/STM Project/Mirror5_8G/F103_HW_SPI_UART/Core/Src/RX5808.c:30:6:RX5808_Init	1
-D:/STM Project/Mirror5_8G/F103_HW_SPI_UART/Core/Src/RX5808.c:52:7:prog_freg	1
-D:/STM Project/Mirror5_8G/F103_HW_SPI_UART/Core/Src/RX5808.c:75:15:rssi_db	1
-D:/STM Project/Mirror5_8G/F103_HW_SPI_UART/Core/Src/RX5808.c:85:15:CH_32_to_band	7
-D:/STM Project/Mirror5_8G/F103_HW_SPI_UART/Core/Src/RX5808.c:96:15:CH_32_to_CH_8	7
-D:/STM Project/Mirror5_8G/F103_HW_SPI_UART/Core/Src/RX5808.c:115:14:CH_32_to_frequency	1
-D:/STM Project/Mirror5_8G/F103_HW_SPI_UART/Core/Src/RX5808.c:121:15:frequency_to_CH_32	3
