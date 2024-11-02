@@ -1,80 +1,80 @@
-const int analogPin1 = 34;  // Верхний аналоговый пин
+const int analogPin1 = 34;   // Верхний аналоговый пин
 const int analogPin2 = 35;
-const int analogPin3 = 32;
-const int analogPin4 = 33;  // Нижний аналоговый пин (USB это низ)
-const int ledPin = 2;       // Пин для управления светодиодом
-const int pwmPin = 26;      // Пин для управления PWM
+const int pwmPin = 26;     // Пин для управления PWM
 
-const int numSamples = 5;   // Количество измерений для усреднения
+const int numSamples = 5;       // Количество измерений для усреднения
 
-int rawValues1[numSamples]; // Массив для хранения последних значений с пинов
-int rawValues2[numSamples];
-int rawValues3[numSamples];
-int rawValues4[numSamples];
+int rawValuesLeft[numSamples];  // Массив для хранения последних значений с пинов 
+int rawValuesRight[numSamples];
 
 int currentSampleIndex = 0; // Индекс текущего измерения
 
 const int pwmFreq = 50;       // Частота PWM (50 Гц)
-const int pwmResolution = 8;  // Разрешение PWM (8 бит, значение от 0 до 255)
+const int pwmResolution = 8;  // Разрешение PWM (8 бит)
+const int pwmChannel = 0;
+
+const int servoMinUs = 800;
+const int servoMaxUs = 2500;
+const int servoAngleRange = 180;
 
 void setup() {
   Serial.begin(115200);
   
   // Разрешение 12 бит (0-4095)
   analogReadResolution(12);
-  pinMode(ledPin, OUTPUT);
-
-  ledcAttach(pwmPin, pwmFreq, pwmResolution); // Новый хуеблядский API
+  ledcAttach(pwmPin, pwmFreq, pwmResolution);
+  
+  setServoAngle(90);
 }
 
 int average(int* values, int numValues) {
-  int sum = 0;
+  long sum = 0;
   for (int i = 0; i < numValues; i++) {
     sum += values[i];
   }
   return sum / numValues;
 }
 
+void setServoAngle(int angle) {
+  int us = map(angle, 0, 180, servoMinUs, servoMaxUs);
+
+  uint32_t duty = (us * ((1 << pwmResolution) - 1)) / (1000000 / pwmFreq);
+  
+  ledcWrite(pwmChannel, duty);
+}
+
 void loop() {
-  rawValues1[currentSampleIndex] = analogRead(analogPin1); 
-  rawValues2[currentSampleIndex] = analogRead(analogPin2); 
-  rawValues3[currentSampleIndex] = analogRead(analogPin3); 
-  rawValues4[currentSampleIndex] = analogRead(analogPin4); 
+  rawValuesLeft[currentSampleIndex] = analogRead(analogPin1); 
+  rawValuesRight[currentSampleIndex] = analogRead(analogPin2); 
 
   currentSampleIndex = (currentSampleIndex + 1) % numSamples;
 
   // Когда массив заполнился проводим усреднение
   if (currentSampleIndex == 0) {
-    int avgValue1 = average(rawValues1, numSamples);
-    int avgValue2 = average(rawValues2, numSamples);
-    int avgValue3 = average(rawValues3, numSamples);
-    int avgValue4 = average(rawValues4, numSamples);
+    int avgValueLeft = average(rawValuesLeft, numSamples);
+    int avgValueRight = average(rawValuesRight, numSamples);
 
-    // Максимальное значения среди всех пинов
-    int maxAvgValue = max(max(avgValue1, avgValue2), max(avgValue3, avgValue4));
+    // разница сигналов
+    int rssiDiff = avgValueLeft - avgValueRight;
 
-    if (maxAvgValue == avgValue1 || maxAvgValue == avgValue2) {
-      digitalWrite(ledPin, HIGH);
-      ledcWrite(pwmPin, 13);
-    } 
-    else if (maxAvgValue == avgValue3 || maxAvgValue == avgValue4) {
-      digitalWrite(ledPin, LOW);
-      ledcWrite(pwmPin, 26);
-    }
+    static int servoAngle = 90;
+    float Kp = 0.05;       
 
-    Serial.print("Value (34): ");
-    Serial.print(avgValue1);
-    Serial.print(" | Value (35): ");
-    Serial.print(avgValue2);
-    Serial.print(" |||||||");
-    Serial.print("| Value (32): ");
-    Serial.print(avgValue3);
-    Serial.print(" | Value (33): ");
-    Serial.print(avgValue4);
-    Serial.print(" | Max: ");
-    Serial.println(maxAvgValue);
+    int adjustment = Kp * rssiDiff;
+
+    servoAngle -= adjustment;   // плавная корректировка угола сервопривода
+
+    setServoAngle(servoAngle);
+
+    Serial.print("Left: ");
+    Serial.print(avgValueLeft);
+    Serial.print(" | Right: ");
+    Serial.print(avgValueRight);
+    Serial.print(" | Diff: ");
+    Serial.print(rssiDiff);
+    Serial.print(" | Servo Angle: ");
+    Serial.println(servoAngle);
   }
 
-  // Задержка между измерениями
-  delay(300);
+  delay(50);
 }
